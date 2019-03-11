@@ -1,0 +1,15 @@
+// creer taux taxe 
+lien : http://localhost:8099/taxe-sejour-v1/tauxTaxeSejour/
+query : {"pourcentage":"0.1","referenceLocal":"l1","dateDebut":"2018-03-25","dateFin":"2019-03-20","refCategorie":"c1"}	
+
+// creer taxe Sejour 
+lien : http://localhost:8099/taxe-sejour-v1/taxeSejours/referenceLocal/
+query :{"reference":"t2","chiffreAffaire":"20000","numeroTrimester":"4","annee":"2018",
+         "datePresentation":"2019-02-30","referenceLocal":"L3","penalite":"10","majoration":"20"}
+
+// findByCrétaria  
+lien : http://localhost:8099/taxe-sejour-v1/taxeSejours/annee/2018/montantMin/1000/montantMax/1000000000
+
+// creer categorie 
+lien: http://localhost:8090/taxe-api/categorie/
+query :{"libelle":"hotel*" , "refCategorie":"c1"}
