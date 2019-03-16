@@ -31,9 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RequestMapping({"/taxe-sejour-v1/taxeSejours"})
 public class TaxeSejourTrimestrielleRest {
-
-    
-
     @Autowired
     private LocalProxy localProxy;
     @Autowired
@@ -67,9 +64,9 @@ public class TaxeSejourTrimestrielleRest {
 @GetMapping("/")
     public List<TaxeSejourTrimestrielleVo> findAll() {
         return taAbstractConverter.toVo(taxeSejourTrimestrielleService.findAll());
-    }
 
-    
+
+    }
     
     
     public TaxeSejourTrimestrielleConverter getTaxeSejourTrimestrielleConverter() {
@@ -96,4 +93,13 @@ public class TaxeSejourTrimestrielleRest {
         this.taxeSejourTrimestrielleService = taxeSejourTrimestrielleService;
     }
 
+    public AbstractConverter<TaxeSejourTrimestrielle, TaxeSejourTrimestrielleVo> getTaAbstractConverter() {
+        return taAbstractConverter;
+    }
+
+    public void setTaAbstractConverter(AbstractConverter<TaxeSejourTrimestrielle, TaxeSejourTrimestrielleVo> taAbstractConverter) {
+        this.taAbstractConverter = taAbstractConverter;
+    }
+
+    
 }

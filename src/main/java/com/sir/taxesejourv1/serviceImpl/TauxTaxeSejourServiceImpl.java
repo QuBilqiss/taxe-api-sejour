@@ -52,14 +52,13 @@ public class TauxTaxeSejourServiceImpl implements TauxTaxeSejourService {
         return tauxTaxeSejourDao.findAll();
     }
 
-   
-
-   
+    @Override
+    public void deleteByRefCategorie(String refCategorie) {
+        TauxTaxeSejour tauxTaxeSejour= tauxTaxeSejourDao.findByRefCategorie(refCategorie);
+            tauxTaxeSejourDao.delete(tauxTaxeSejour);
+            
+        
+            
+        }
     }
-
-    
-
-    
-    
-   
-
+       

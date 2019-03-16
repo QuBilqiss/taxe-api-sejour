@@ -20,4 +20,5 @@ public interface TauxTaxeSejourService {
      public TauxTaxeSejour findByRefCategorie(String refCategorie);
     //  public   TauxTaxeSejour findByRefCategorieAndDate(String refCategorie,Date date);
      public List<TauxTaxeSejour> findAll();
+         public void deleteByRefCategorie(String refCategorie);
 }

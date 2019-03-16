@@ -116,17 +116,18 @@ public class DateUtil {
         return simpleDateFormat.format(date);
     }
 
+    
     public static int calculDiff(Date date1, Date date2) {
         if (date1 == null) {
             return -1;
         }
         String datePaiementAsString = formatYYYYMMDDmmhhSS(date1);
         System.out.println("datePaiementAsString = " + datePaiementAsString);
-        String dateAsString = formatYYYYMMDDmmhhSS(date2);
-        System.out.println("datePresentationAsString = " + dateAsString);
+        String datePresentationAsString = formatYYYYMMDDmmhhSS(date2);
+        System.out.println("datePresentationAsString = " + datePresentationAsString);
         long monthsBetween = ChronoUnit.MONTHS.between(
                 LocalDate.parse(datePaiementAsString).withDayOfMonth(1),
-                LocalDate.parse(dateAsString).withDayOfMonth(1));
+                LocalDate.parse(datePresentationAsString).withDayOfMonth(1));
         int m = (int) -monthsBetween;
         System.out.println("monthsBetween = " + m);
         return m;

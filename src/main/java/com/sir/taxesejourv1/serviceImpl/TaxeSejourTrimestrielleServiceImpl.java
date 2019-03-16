@@ -136,9 +136,4 @@ public class TaxeSejourTrimestrielleServiceImpl implements TaxeSejourTrimestriel
     }
 
     
-
-   
-
-    
-
-}
+}  
