@@ -82,6 +82,12 @@ public class TaxeSejourTrimestrielleServiceImpl implements TaxeSejourTrimestriel
         }
     }
     
+     @Override // permet de suprimer un taxe d'aprés leur reference 
+    public void deleteByReference(String reference) {
+        TaxeSejourTrimestrielle taxe= taxeSejourTrimestrielleDao.findByReference(reference);
+        taxeSejourTrimestrielleDao.delete(taxe);
+    }
+    
     @Override  // permet de trouver un taxe d'apres leur reference 
     public TaxeSejourTrimestrielle findByReference(String reference) {
         return taxeSejourTrimestrielleDao.findByReference(reference);

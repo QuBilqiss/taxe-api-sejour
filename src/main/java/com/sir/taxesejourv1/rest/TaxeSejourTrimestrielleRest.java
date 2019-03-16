@@ -16,6 +16,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,6 +49,11 @@ public class TaxeSejourTrimestrielleRest {
         return res;
     }
 
+     @DeleteMapping("/delete/{reference}")
+    public void deleteByReference(@PathVariable("reference") String reference) {
+        taxeSejourTrimestrielleService.deleteByReference(reference);
+    }
+    
      @GetMapping("/reference/{reference}")
     public TaxeSejourTrimestrielle findByReference( @PathVariable String reference) {
         return taxeSejourTrimestrielleService.findByReference(reference);

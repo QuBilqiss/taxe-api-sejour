@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface LocalProxy {
      @GetMapping("/taxe-api/local/reference/{reference}")
     public LocalVo findByReference(@PathVariable("reference") String reference);
+     @GetMapping("/taxe-api/local/referenceLocal/{referenceLocal}")
+    public LocalVo findByReferenceAndPrepareForSave(@PathVariable("referenceLocal")String referenceLocal);
 //     @GetMapping("/adress-api-v1/Local/refCategorie/{refCategorie}")
 //    public LocalVo findByRefCategorie(@PathVariable("refCategorie") String refCategorie);
     

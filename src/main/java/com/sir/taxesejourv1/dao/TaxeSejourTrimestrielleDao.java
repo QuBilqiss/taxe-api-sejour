@@ -22,7 +22,7 @@ public interface TaxeSejourTrimestrielleDao extends JpaRepository<TaxeSejourTrim
      public TaxeSejourTrimestrielle findByReference(String reference);
      
   public List<TaxeSejourTrimestrielle> findByReferenceLocal(String referenceLocal);
-   
+   public void deleteByReference(String reference);
      @Query("select t from TaxeSejourTrimestrielle t where t.annee= :annee and t.montantTaxe> :montantMin "
              + "and t.montantTaxe< :montantMax ")
       public List<TaxeSejourTrimestrielle> findByCriteria(@Param ("annee") Integer annee,
