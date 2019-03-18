@@ -27,4 +27,8 @@ public interface TaxeSejourTrimestrielleDao extends JpaRepository<TaxeSejourTrim
              + "and t.montantTaxe< :montantMax ")
       public List<TaxeSejourTrimestrielle> findByCriteria(@Param ("annee") Integer annee,
               @Param ("montantMin" )Double montantMin,@Param ("montantMax") Double montantMax);
+      
+     @Query("select t from TaxeSejourTrimestrielle t where t.annee= :annee and t.numeroTrimester=:numeroTrimester ")
+      public List<TaxeSejourTrimestrielle> findByAnneeAndNumeroTrimester(@Param ("annee") Integer annee,
+              @Param ("numeroTrimester" )Integer numeroTrimester);
 }

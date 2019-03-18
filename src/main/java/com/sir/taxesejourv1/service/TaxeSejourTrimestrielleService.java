@@ -21,4 +21,5 @@ public interface TaxeSejourTrimestrielleService {
         public List<TaxeSejourTrimestrielle> findByCriteria( Integer annee,Double montantMin,Double montantMax);
         public List<TaxeSejourTrimestrielle> findAll();
         public void deleteByReference(String reference);
+         public List<TaxeSejourTrimestrielle> findByAnneeAndNumeroTrimester( Integer annee, Integer numeroTrimester);
 }

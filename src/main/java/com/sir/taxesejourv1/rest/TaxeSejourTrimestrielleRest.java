@@ -67,6 +67,12 @@ public class TaxeSejourTrimestrielleRest {
     public List<TaxeSejourTrimestrielle> findByCriteria(@PathVariable Integer annee,@PathVariable Double montantMin,@PathVariable Double montantMax) {
         return taxeSejourTrimestrielleService.findByCriteria(annee, montantMin, montantMax);
     }
+    
+   @GetMapping("/annee/{annee}/numeroTrimester/{numeroTrimester}")
+    public List<TaxeSejourTrimestrielle> findByAnneeAndNumeroTrimester(@PathVariable Integer annee,@PathVariable Integer numeroTrimester) {
+        return taxeSejourTrimestrielleService.findByAnneeAndNumeroTrimester(annee, numeroTrimester);
+    }
+    
 @GetMapping("/")
     public List<TaxeSejourTrimestrielleVo> findAll() {
         return taAbstractConverter.toVo(taxeSejourTrimestrielleService.findAll());

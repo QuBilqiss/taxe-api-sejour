@@ -101,6 +101,10 @@ public class TaxeSejourTrimestrielleServiceImpl implements TaxeSejourTrimestriel
     public List<TaxeSejourTrimestrielle> findByCriteria(Integer annee, Double montantMin, Double montantMax) {
         return taxeSejourTrimestrielleDao.findByCriteria(annee, montantMin, montantMax);
     }
+     @Override
+    public List<TaxeSejourTrimestrielle> findByAnneeAndNumeroTrimester(Integer annee, Integer numeroTrimester) {
+        return taxeSejourTrimestrielleDao.findByAnneeAndNumeroTrimester(annee, numeroTrimester);
+    }
 
     @Override
     public List<TaxeSejourTrimestrielle> findAll() {
