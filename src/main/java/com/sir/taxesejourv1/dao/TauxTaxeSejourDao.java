@@ -22,5 +22,6 @@ public interface TauxTaxeSejourDao extends JpaRepository<TauxTaxeSejour,Long>{
     public TauxTaxeSejour findByRefCategorie(String refCategorie);
     // public   TauxTaxeSejour findByRefCategorieAndDate(String refCategorie,Date date);
     public void deleteByRefCategorie(String refCategorie);
+    
      
 }
